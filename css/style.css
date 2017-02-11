@@ -1,0 +1,220 @@
+/*GENERAL SETTINGS*/
+body, html{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+/*SKY*/
+.sky{
+  width: 100%;
+  height: 40%;
+  box-sizing: border-box;
+  background-color: skyblue;
+}
+
+.sky .cloud1{
+  /*border: 1px solid red;*/
+  width: 25%;
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  animation-name: cloud;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.sky .cloud2{
+  /*border: 1px solid green;*/
+  width: 30%;
+  position: absolute;
+  top: 18%;
+  right: 10%;
+  animation-name: cloud;
+  animation-duration: 7s;
+  animation-delay: .5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+.sky .cloudpixel2{
+  /*z-index: 10;*/
+  width: 8%;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  animation-name: cloudpixel2;
+  animation-duration: 22s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/*GRASS*/
+.grass{
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  background-color: seagreen;
+}
+
+.grass .cloudpixel1{
+  width: 7%;
+  position: absolute;
+  top: -50%;
+  animation-name: cloudpixel1;
+  animation-duration: 20s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.grass .pipe1{
+  width: 7%;
+  position: absolute;
+  bottom: 25%;
+  left: 20%;
+  animation-name: pipe;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.grass .pipe2{
+  width: 7%;
+  position: absolute;
+  bottom: 25%;
+  right: 30%;
+  animation-name: pipe;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#triangle-up1 {
+  position: absolute;
+  /*z-index: 0;*/
+  bottom: 100%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 50px solid seagreen;
+}
+
+#triangle-up2 {
+  position: absolute;
+  /*z-index: 0;*/
+  bottom: 100%;
+  left: 40%;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 75px solid seagreen;
+}
+
+#triangle-up3 {
+  position: absolute;
+  /*z-index: 0;*/
+  bottom: 100%;
+  left: 80%;
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 60px solid seagreen;
+}
+
+/*ROAD*/
+.road{
+  width: 100%;
+  height: 30%;
+  box-sizing: border-box;
+  background-color: grey;
+  border-top: 7px solid #a8a2a2;
+  border-bottom: 7px solid #a8a2a2;
+}
+
+.road .lines{
+  box-sizing: border-box;
+  width: 100%;
+  height: 14px;
+  border: 7px dashed white;
+  position: absolute;
+  top: 45%;
+}
+
+/*Elements to animate*/
+.mario{
+  position: absolute;
+  top: -30%;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.luigi{
+  position: absolute;
+  top: 20%;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 6s;
+  animation-fill-mode: both;
+  animation-delay: .5s;
+  animation-iteration-count: infinite;
+}
+
+.mushroom{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  animation-name: drive;
+  animation-duration: 7s;
+  animation-fill-mode: both;
+  animation-delay: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+/*ANIMATIONS*/
+/*CLOUDS*/
+@keyframes cloud {
+  from{ transform: scale(1)}
+  to { transform: scale(1.2)}
+}
+
+@keyframes cloudpixel1 {
+  from{ transform: translateX(-150px)}
+  to { transform: translateX(1300px);}
+}
+
+@keyframes cloudpixel2 {
+  from{ transform: translateX(200px)}
+  to { transform: translateX(-1300px);}
+}
+
+@keyframes drive {
+  from{ transform: translateX(-200px)}
+  to{ transform: translate(1500px)}
+}
+
+@keyframes pipe {
+  from{ transform: scaleY(1)}
+  to{ transform: scaleY(1.2)}
+}
